@@ -1,6 +1,5 @@
 #IMPORTING THE REQUIRED LIBRARIES
 
-
 import numpy as np
 import cv2
 import sys
@@ -12,16 +11,36 @@ import matplotlib
 l=["1.png","2.png","3.png","4.png","5.png","6.png","7.png","8.png","9.png","10.png"]
 for i in l:
     img= cv2.imread(i)
-    cv2.imshow("image",img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    
     image = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     
     #SETTING THE RANGE OF BLUE COLOR FOR THE OCEAN
     
-    lower_ocean = np.array([90, 50, 50])   
-    upper_ocean = np.array([140, 255, 255])
-
+    lower_ocean = np.array([90, 120, 60])   
+    upper_ocean = np.array([120, 255, 150])
+    ocean_mask=cv2.inRange(image, lower_ocean, upper_ocean)
+    
     #SETTING THE RANGE OF GREEN COLOR FOR THE LAND
+    
+    lower_land = np.array([40, 120, 80])
+    upper_land = np.array([80, 255, 200])
+    land_mask=cv2.inRange(image, lower_land, upper_land)
+    
+    #OVERLAY
+    
+    copy = img.copy()
+    copy[ocean_mask> 0] = [255, 0, 0]    #OCEAN WILL BE REPRESENTED BY BLUE
+    copy[land_mask > 0]  = [0, 255, 255]  #LAND WILL BE REPRESENTED BY YELLOW
+    
+    #TO DISPLAY THE LAND AND OCEAN SEGREGATION
+    
+    output= f"Overlay_{i}"
+    cv2.imwrite(output,copy)
+    cv2.imshow("Segmented image",copy)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    
+    
+    
     
     
