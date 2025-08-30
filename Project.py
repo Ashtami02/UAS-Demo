@@ -15,6 +15,13 @@ for i in l:
     cv2.imshow("image",img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+    image = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     
+    #SETTING THE RANGE OF BLUE COLOR FOR THE OCEAN
     
+    lower_ocean = np.array([90, 50, 50])   
+    upper_ocean = np.array([140, 255, 255])
 
+    #SETTING THE RANGE OF GREEN COLOR FOR THE LAND
+    
+    
