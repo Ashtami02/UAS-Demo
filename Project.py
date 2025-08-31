@@ -12,7 +12,7 @@ l=["1.png","2.png","3.png","4.png","5.png","6.png","7.png","8.png","9.png","10.p
 for i in l:
     img= cv2.imread(i)
     
-    image = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    image = cv2.cvtColor(img, cv2.COLOR_BGR2HSV) #CONVERT TO HSV
     
     #SETTING THE RANGE OF BLUE COLOR FOR THE OCEAN
     
@@ -40,6 +40,34 @@ for i in l:
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     
+    #TO GET THE COORDINATES OF RESCUE PADS
+    
+    grey_image = cv2.cvtColor(copy, cv2.COLOR_BGR2GRAY) #CONVERT TO GRAYSCALE
+    grey_image = cv2.medianBlur(grey_image, 5)          #REDUCE NOISE
+
+    #DETECT CIRCLES
+    circle = cv2.HoughCircles(
+        grey_image,
+        cv2.HOUGH_GRADIENT,
+        dp=1.2,
+        minDist=40,
+        param1=100,
+        param2=30,
+        minRadius=15,
+        maxRadius=50
+    )
+
+    #STORING THE COORDINATES OF RESCUE PADS
+    
+    Rescuepads_coordinates = []
+    for idx, (x, y, r) in enumerate(circle[0, :], start=1):
+        Rescuepads_coordinates.append((x, y, r))
+    for i in Rescuepads_coordinates:
+        print(i)
+        
+        
+    
+                
     
     
     
