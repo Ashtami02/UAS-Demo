@@ -56,7 +56,9 @@ for i in l:
        
     #CREATING A DICTIONARY OF THE RANGE OF COLORS FOR THE CASUALTIES
     
-    Color={"red": [([0, 50, 200], [10, 255, 255]),([170, 50, 200], [179, 255, 255])],"yellow": [(20, 100, 100), (35, 255, 255)],"green": [(40, 50, 50), (80, 255, 255)],}
+    Color={"red": [([0, 50, 200], [10, 255, 255]),([170, 50, 200], [179, 255, 255])],
+           "yellow": [(20, 100, 100), (35, 255, 255)],
+           "green": [(40, 50, 50), (80, 255, 255)],}
     
     
     Casualities_info = []
@@ -92,6 +94,8 @@ for i in l:
                 shape = "square"
             else:
                 shape = "Star"
+                
+            #STORING INFORMATION REGARDING THE CASUALITIES
             l=[X,Y,key,shape]
             Casualities_info.append(l)
             l2=[i,X,Y,key,shape]
