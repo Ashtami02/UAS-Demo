@@ -60,10 +60,10 @@ for i in l:
         circle = np.uint16(np.around(circle))
 
         for (x, y, r) in circle[0, :]:
-            # Get the HSV value at the circle center
+            #GET HSV VALUE OF THE PAD
             h, s, v = image[y, x]
 
-            # Check if this circle matches any of the pad color ranges
+            #TO AVOID ANY FALSE CIRCLES AND TO ONLY DETECT RESCUE PADS
             is_pad = False
             for lower, upper in pad_colors.values():
                 lower = np.array(lower)
@@ -71,24 +71,8 @@ for i in l:
                 if np.all(image[y, x] >= lower) and np.all(image[y, x] <= upper):
                     is_pad = True
                     break
-
-            # If the circle has a valid pad color, keep it
             if is_pad:
                 rescue_pads.append((x, y))
-                
-    debug_img = img.copy()
-    for idx, pad in enumerate(rescue_pads, start=1):
-            if pad[0] is not None and pad[1] is not None:
-                cv2.circle(debug_img, (pad[0], pad[1]), 20, (0, 255, 0), 3)
-                cv2.putText(debug_img, f"Pad {idx}", (pad[0] - 20, pad[1] - 20),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
-            else:
-                cv2.putText(debug_img, f"Pad {idx} Not Found", (30, 30 + idx * 30),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
-
-    cv2.imshow(f"Detected Pads - {i}", debug_img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
     
     #CREATING A DICTIONARY OF THE RANGE OF COLORS FOR THE CASUALTIES
     
@@ -163,47 +147,4 @@ for i in l:
         print(i,"Casualty", ({b['color']}, {b['shape']}),"at", {b['position']})
         for pad, dist in b["distances"]:
             print( "Distance to ",pad, dist)
-    
-'''import cv2
-
-# Load the image
-img = cv2.imread("1.png")
-clone = img.copy()
-
-# Function to capture mouse events
-def show_coordinates(event, x, y, flags, param):
-    global img
-    if event == cv2.EVENT_MOUSEMOVE:  # When moving the mouse
-        temp = clone.copy()
-        # Display coordinates on the image
-        cv2.putText(temp, f"X:{x} Y:{y}", (10, 30),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
-        cv2.imshow("Image", temp)
-
-    if event == cv2.EVENT_LBUTTONDOWN:  # On left-click, print coordinates
-        print(f"Clicked at X:{x}, Y:{y}")
-
-# Create a window and set the mouse callback
-cv2.namedWindow("Image")
-cv2.setMouseCallback("Image", show_coordinates)
-
-# Display image until ESC is pressed
-while True:
-    cv2.imshow("Image", img)
-    if cv2.waitKey(1) & 0xFF == 27:  # Press ESC to exit
-        break
-
-cv2.destroyAllWindows()
-
-import cv2
-import numpy as np
-
-img = cv2.imread("1.png")
-hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-
-# Approximate center of red star
-x, y = 81,92   # Adjust if needed
-pixel = hsv[y, x]
-
-print("HSV at red star center:", pixel)'''
     
