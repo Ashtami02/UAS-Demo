@@ -4,7 +4,7 @@ import numpy as np
 import cv2
 import sys
 import matplotlib
-
+import math
 
 #WRITING THE CODE FOR LAND AND OCEAN SEGREGATION
 
@@ -29,7 +29,7 @@ for i in l:
     #OVERLAY
     
     copy = img.copy()
-    copy[ocean_mask> 0] = [255, 0, 0]    #OCEAN WILL BE REPRESENTED BY BLUE
+    copy[ocean_mask> 0] = [255, 0, 0]     #OCEAN WILL BE REPRESENTED BY BLUE
     copy[land_mask > 0]  = [0, 255, 255]  #LAND WILL BE REPRESENTED BY YELLOW
     
     #TO DISPLAY THE LAND AND OCEAN SEGREGATION
@@ -46,14 +46,50 @@ for i in l:
     grey_image = cv2.medianBlur(grey_image, 5)          #REDUCE NOISE
 
     #DETECT CIRCLES
-    circle = cv2.HoughCircles( grey_image, cv2.HOUGH_GRADIENT, dp=1.2, minDist=40, param1=100, param2=30, minRadius=15, maxRadius=50)
+    circle = cv2.HoughCircles(grey_image, cv2.HOUGH_GRADIENT, dp=1.2, minDist=30, param1=100, param2=18, minRadius=15, maxRadius=60)
+    pad_colors = {
+        "white":  [(0, 0, 200), (180, 40, 255)],    
+        "light_blue": [(85, 50, 180), (110, 150, 255)],  
+        "pink":  [(135, 50, 180), (150, 150, 255)]   
+    }
 
     #STORING THE COORDINATES OF RESCUE PADS
     
-    Rescuepads_coordinates = []
-    for idx, (x, y, r) in enumerate(circle[0, :], start=1):
-        Rescuepads_coordinates.append((x, y, r))
-       
+    rescue_pads = []
+    if circle is not None:
+        circle = np.uint16(np.around(circle))
+
+        for (x, y, r) in circle[0, :]:
+            # Get the HSV value at the circle center
+            h, s, v = image[y, x]
+
+            # Check if this circle matches any of the pad color ranges
+            is_pad = False
+            for lower, upper in pad_colors.values():
+                lower = np.array(lower)
+                upper = np.array(upper)
+                if np.all(image[y, x] >= lower) and np.all(image[y, x] <= upper):
+                    is_pad = True
+                    break
+
+            # If the circle has a valid pad color, keep it
+            if is_pad:
+                rescue_pads.append((x, y))
+                
+    debug_img = img.copy()
+    for idx, pad in enumerate(rescue_pads, start=1):
+            if pad[0] is not None and pad[1] is not None:
+                cv2.circle(debug_img, (pad[0], pad[1]), 20, (0, 255, 0), 3)
+                cv2.putText(debug_img, f"Pad {idx}", (pad[0] - 20, pad[1] - 20),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
+            else:
+                cv2.putText(debug_img, f"Pad {idx} Not Found", (30, 30 + idx * 30),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
+
+    cv2.imshow(f"Detected Pads - {i}", debug_img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    
     #CREATING A DICTIONARY OF THE RANGE OF COLORS FOR THE CASUALTIES
     
     Color={"red": [([0, 50, 200], [10, 255, 255]),([170, 50, 200], [179, 255, 255])],
@@ -62,7 +98,7 @@ for i in l:
     
     
     Casualities_info = []
-    All_casualties = []
+    
     for key,value in Color.items():
         if key== "red":             #CREATING A SEPERATE MASK FOR RED
 
@@ -74,7 +110,7 @@ for i in l:
             mask = cv2.bitwise_or(mask1, mask2)
         else:
         
-            mask = cv2.inRange(image, np.array(value[0]), np.array(value[1]))     #CREATING A BINARY MASK
+            mask = cv2.inRange(image, np.array(value[0]), np.array(value[1]))            #CREATING A BINARY MASK
 
         contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) #GETTING THE BOUNDARY
         for cnt in contours:
@@ -83,10 +119,12 @@ for i in l:
                 continue
 
             #TO GET THE COORDINATES OF CASUALITIES
+            
             x, y, w, h = cv2.boundingRect(cnt)
             X, Y = x + w // 2, y + h // 2
             
             #DETECTING THE SHAPE OF THE CASUALITIES
+            
             approx = cv2.approxPolyDP(cnt, 0.04 * cv2.arcLength(cnt, True), True)
             if len(approx) == 3:
                 shape = "Triangle"
@@ -96,11 +134,76 @@ for i in l:
                 shape = "Star"
                 
             #STORING INFORMATION REGARDING THE CASUALITIES
+            
             l=[X,Y,key,shape]
             Casualities_info.append(l)
-            l2=[i,X,Y,key,shape]
-            All_casualties.append(l2)
 
-    print(i," → Casualties found: ",len(Casualities_info))
+    '''print(i," → Casualties found: ",len(Casualities_info))'''
     
+    #CREATING THE DISTANCE MATRIX
+    
+    distance_matrix = []
+    for c in (Casualities_info):
+        casualty_distances = []
+
+        for padindex, pad in enumerate(rescue_pads, start=1):
+            d = math.sqrt((pad[0] - c[0]) ** 2 + (pad[1] - c[1]) ** 2)       #APPLYING THE DISTANCE FORMULA 
+            casualty_distances.append((f"Pad {padindex}", round(d, 2)))
+
+        distance_matrix.append({
+            "position": (c[0], c[1]),
+            "color": c[2],
+            "shape": c[3],
+            "distances": casualty_distances
+        })
+
+    # PRINT DISTANCE MATRIX 
+    
+    for b in distance_matrix:
+        print(i,"Casualty", ({b['color']}, {b['shape']}),"at", {b['position']})
+        for pad, dist in b["distances"]:
+            print( "Distance to ",pad, dist)
+    
+'''import cv2
+
+# Load the image
+img = cv2.imread("1.png")
+clone = img.copy()
+
+# Function to capture mouse events
+def show_coordinates(event, x, y, flags, param):
+    global img
+    if event == cv2.EVENT_MOUSEMOVE:  # When moving the mouse
+        temp = clone.copy()
+        # Display coordinates on the image
+        cv2.putText(temp, f"X:{x} Y:{y}", (10, 30),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
+        cv2.imshow("Image", temp)
+
+    if event == cv2.EVENT_LBUTTONDOWN:  # On left-click, print coordinates
+        print(f"Clicked at X:{x}, Y:{y}")
+
+# Create a window and set the mouse callback
+cv2.namedWindow("Image")
+cv2.setMouseCallback("Image", show_coordinates)
+
+# Display image until ESC is pressed
+while True:
+    cv2.imshow("Image", img)
+    if cv2.waitKey(1) & 0xFF == 27:  # Press ESC to exit
+        break
+
+cv2.destroyAllWindows()
+
+import cv2
+import numpy as np
+
+img = cv2.imread("1.png")
+hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+
+# Approximate center of red star
+x, y = 81,92   # Adjust if needed
+pixel = hsv[y, x]
+
+print("HSV at red star center:", pixel)'''
     
