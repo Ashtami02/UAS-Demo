@@ -132,7 +132,7 @@ for i in l:
 
         for padindex, pad in enumerate(rescue_pads, start=1):
             d = math.sqrt((pad[0] - c[0]) ** 2 + (pad[1] - c[1]) ** 2)       #APPLYING THE DISTANCE FORMULA 
-            casualty_distances.append((f"Pad {padindex}", round(d, 2)))
+            casualty_distances.append((f"Pad {padindex}", d))
 
         distance_matrix.append({
             "position": (c[0], c[1]),
