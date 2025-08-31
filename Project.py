@@ -46,29 +46,57 @@ for i in l:
     grey_image = cv2.medianBlur(grey_image, 5)          #REDUCE NOISE
 
     #DETECT CIRCLES
-    circle = cv2.HoughCircles(
-        grey_image,
-        cv2.HOUGH_GRADIENT,
-        dp=1.2,
-        minDist=40,
-        param1=100,
-        param2=30,
-        minRadius=15,
-        maxRadius=50
-    )
+    circle = cv2.HoughCircles( grey_image, cv2.HOUGH_GRADIENT, dp=1.2, minDist=40, param1=100, param2=30, minRadius=15, maxRadius=50)
 
     #STORING THE COORDINATES OF RESCUE PADS
     
     Rescuepads_coordinates = []
     for idx, (x, y, r) in enumerate(circle[0, :], start=1):
         Rescuepads_coordinates.append((x, y, r))
-    for i in Rescuepads_coordinates:
-        print(i)
+       
+    #CREATING A DICTIONARY OF THE RANGE OF COLORS FOR THE CASUALTIES
+    
+    Color={"red": [([0, 50, 200], [10, 255, 255]),([170, 50, 200], [179, 255, 255])],"yellow": [(20, 100, 100), (35, 255, 255)],"green": [(40, 50, 50), (80, 255, 255)],}
+    
+    
+    Casualities_info = []
+    All_casualties = []
+    for key,value in Color.items():
+        if key== "red":             #CREATING A SEPERATE MASK FOR RED
+
+            lower1, upper1 = value[0]
+            lower2, upper2 = value[1]
+
+            mask1 = cv2.inRange(image, np.array(lower1), np.array(upper1))
+            mask2 = cv2.inRange(image, np.array(lower2), np.array(upper2))
+            mask = cv2.bitwise_or(mask1, mask2)
+        else:
         
-        
-    
-                
-    
-    
+            mask = cv2.inRange(image, np.array(value[0]), np.array(value[1]))     #CREATING A BINARY MASK
+
+        contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) #GETTING THE BOUNDARY
+        for cnt in contours:
+            area = cv2.contourArea(cnt)
+            if area < 20 or area > 8000:
+                continue
+
+            #TO GET THE COORDINATES OF CASUALITIES
+            x, y, w, h = cv2.boundingRect(cnt)
+            X, Y = x + w // 2, y + h // 2
+            
+            #DETECTING THE SHAPE OF THE CASUALITIES
+            approx = cv2.approxPolyDP(cnt, 0.04 * cv2.arcLength(cnt, True), True)
+            if len(approx) == 3:
+                shape = "Triangle"
+            elif len(approx) == 4:
+                shape = "square"
+            else:
+                shape = "Star"
+            l=[X,Y,key,shape]
+            Casualities_info.append(l)
+            l2=[i,X,Y,key,shape]
+            All_casualties.append(l2)
+
+    print(i," → Casualties found: ",len(Casualities_info))
     
     
