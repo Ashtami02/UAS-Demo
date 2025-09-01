@@ -1,4 +1,4 @@
-#IMPORTING THE REQUIRED LIBRARIES
+#IMPORTING THE REQUIRED LIBRARIES 
 
 import numpy as np
 import cv2
@@ -7,7 +7,7 @@ import matplotlib
 import math
 
 #WRITING THE CODE FOR LAND AND OCEAN SEGREGATION
-
+rescue_img=[]
 l=["1.png","2.png","3.png","4.png","5.png","6.png","7.png","8.png","9.png","10.png"]
 for i in l:
     img= cv2.imread(i)
@@ -232,3 +232,8 @@ for i in l:
     print("Total Casualties Assigned:", total)
     print("Rescue Ratio:", rescue_ratio)
 
+
+    rescue_img.append((i,rescue_ratio))
+    
+sorted_images = sorted(rescue_img, key=lambda x: x[1], reverse=True)
+print(sorted_images)
