@@ -122,7 +122,7 @@ for i in l:
             l=[X,Y,key,shape]
             Casualities_info.append(l)
 
-    '''print(i," → Casualties found: ",len(Casualities_info))'''
+    '''print(i," Casualties found: ",len(Casualities_info))'''
     
     #CREATING THE DISTANCE MATRIX
     

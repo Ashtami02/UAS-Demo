@@ -472,5 +472,7 @@ Rescue Pad (GREY):
    2. Age: Child, Medical: Safe, Emergency_score: 1, Distance: 166.90416411821485 px
 Pad-wise Total Priorities: {'grey': 2, 'blue': 6, 'pink': 9}
 Total Casualties Assigned: 9
+Pad-wise Total Priorities: {'grey': 2, 'blue': 6, 'pink': 9}
+Total Casualties Assigned: 9
 Rescue Ratio: 1.8888888888888888
 [('5.png', 2.4), ('6.png', 2.2857142857142856), ('7.png', 2.25), ('4.png', 2.2222222222222223), ('8.png', 2.2222222222222223), ('1.png', 2.1666666666666665), ('2.png', 2.125), ('3.png', 1.8888888888888888), ('10.png', 1.8888888888888888), ('9.png', 1.8571428571428572)]
