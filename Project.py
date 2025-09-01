@@ -48,8 +48,8 @@ for i in l:
     #DETECT CIRCLES
     circle = cv2.HoughCircles(grey_image, cv2.HOUGH_GRADIENT, dp=1.2, minDist=30, param1=100, param2=18, minRadius=15, maxRadius=60)
     pad_colors = {
-        "white":  [(0, 0, 200), (180, 40, 255)],    
-        "light_blue": [(85, 50, 180), (110, 150, 255)],  
+        "grey":  [(0, 0, 200), (180, 40, 255)],    
+        "blue": [(85, 50, 180), (110, 150, 255)],  
         "pink":  [(135, 50, 180), (150, 150, 255)]   
     }
 
@@ -65,14 +65,14 @@ for i in l:
 
             #TO AVOID ANY FALSE CIRCLES AND TO ONLY DETECT RESCUE PADS
             is_pad = False
-            for lower, upper in pad_colors.values():
+            for colour,(lower, upper) in pad_colors.items():
                 lower = np.array(lower)
                 upper = np.array(upper)
                 if np.all(image[y, x] >= lower) and np.all(image[y, x] <= upper):
                     is_pad = True
                     break
             if is_pad:
-                rescue_pads.append((x, y))
+                rescue_pads.append((x, y,colour))
     
     #CREATING A DICTIONARY OF THE RANGE OF COLORS FOR THE CASUALTIES
     
@@ -148,3 +148,87 @@ for i in l:
         for pad, dist in b["distances"]:
             print( "Distance to ",pad, dist)
     
+    # PAD ASSIGNMENT BASED ON PRIORITY AND DISTANCE
+    
+    age = {"Triangle": "Child", "square": "Adult", "Star": "Elder"}
+    priority_color= {"red": "Severe", "yellow": "Mild", "green": "Safe"}
+    capacity = {"blue": 4, "pink": 3, "grey": 2}
+    Shape = {"Star": 3, "Triangle": 2, "square": 1}
+    emergency = {"red": 3, "yellow": 2, "green": 1}
+
+    pad_color_map = {}
+    for idx, pad in enumerate(rescue_pads, start=1):
+        pad_color_map[f"Pad {idx}"] = pad[2]  
+
+    
+    enriched_casualties = []
+    for casualty in distance_matrix:
+        cx, cy = casualty["position"]
+        color = casualty["color"]
+        shape = casualty["shape"]
+
+        #CALCULATE PRIORITY
+        shape_score = Shape.get(shape, 1)
+        emergency_score = emergency.get(color, 1)
+        priority = shape_score * emergency_score
+
+        #TAKING DISTANCE FROM EXISTING DISTANCE MATRIX
+        distances = {pad: dist for pad, dist in casualty["distances"]}
+
+        enriched_casualties.append({
+            "x": cx,
+            "y": cy,
+            "color": color,   
+            "shape": shape,
+            "priority": priority,  
+            "priority_color": color,  
+            "priority_score": emergency[color],  
+            "age_group": age.get(shape, "Unknown"),
+            "medical": priority_color.get(color, "Unknown"),
+            "distances": distances
+        })
+    # SORTING CASUALITIES
+    enriched_casualties.sort(key=lambda c: (-c["priority"], min(c["distances"].values())))
+    assignments = {"blue": [], "pink": [], "grey": []}
+
+    # ASSIGN CASUALITIES 
+    for casualty in enriched_casualties:
+        sorted_pads = sorted(casualty["distances"].items(), key=lambda x: x[1])
+
+        for pad, dist in sorted_pads:
+            pad_color = pad_color_map.get(pad, None)
+            if pad_color and capacity[pad_color] > 0:
+                assignments[pad_color].append({
+                    "age_group": casualty["age_group"],
+                    "medical": casualty["medical"],
+                    "priority_color": casualty["priority_color"],
+                    "priority_score": casualty["priority_score"],
+                    "distance": dist
+                })
+                capacity[pad_color] -= 1
+                break 
+
+    #PRINTING THE DATA OF WHERE EACH CASUALITY IS ASSIGNED
+
+    for pad in ["blue", "pink", "grey"]:
+        print(f"\nRescue Pad ({pad.upper()}):")
+        for idx, c in enumerate(assignments[pad], start=1):
+            print(f"   {idx}. Age: {c['age_group']}, Medical: {c['medical']}, "f"Emergency_score: {c['priority_score']}, Distance: {c['distance']} px")
+            
+    # TOTAL PRIORITIES PER PAD
+    pad_priority= {"grey": 0, "blue": 0, "pink": 0}
+    sum = 0
+    total= 0
+    for pad_color, assigned_list in assignments.items():
+        for casualty in assigned_list:
+            score = casualty["priority_score"]
+            pad_priority[pad_color] += score
+            sum += score
+            total += 1
+
+    rescue_ratio = sum / total
+
+    print("Pad-wise Total Priorities:", pad_priority)
+    print("Total Casualties Assigned:", total)
+    print("Rescue Ratio:", rescue_ratio)
+
