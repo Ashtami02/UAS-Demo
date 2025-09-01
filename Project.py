@@ -188,10 +188,12 @@ for i in l:
             "distances": distances
         })
     # SORTING CASUALITIES
+    
     enriched_casualties.sort(key=lambda c: (-c["priority"], min(c["distances"].values())))
     assignments = {"blue": [], "pink": [], "grey": []}
 
-    # ASSIGN CASUALITIES 
+    # ASSIGN CASUALITIES
+     
     for casualty in enriched_casualties:
         sorted_pads = sorted(casualty["distances"].items(), key=lambda x: x[1])
 
@@ -216,6 +218,7 @@ for i in l:
             print(f"   {idx}. Age: {c['age_group']}, Medical: {c['medical']}, "f"Emergency_score: {c['priority_score']}, Distance: {c['distance']} px")
             
     # TOTAL PRIORITIES PER PAD
+    
     pad_priority= {"grey": 0, "blue": 0, "pink": 0}
     sum = 0
     total= 0
@@ -227,7 +230,9 @@ for i in l:
             total += 1
 
     rescue_ratio = sum / total
-
+    
+    #IMAGES IN THE DESCENDING ORDER OF THE RESCUE RATIO
+    
     print("Pad-wise Total Priorities:", pad_priority)
     print("Total Casualties Assigned:", total)
     print("Rescue Ratio:", rescue_ratio)

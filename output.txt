@@ -1,0 +1,476 @@
+1.png Casualty ({'red'}, {'Star'}) at {(102, 485)}
+Distance to  Pad 1 107.27534665523109
+Distance to  Pad 2 154.69001260585637
+Distance to  Pad 3 151.76626766182267
+1.png Casualty ({'red'}, {'square'}) at {(266, 417)}
+Distance to  Pad 1 224.50835173774718
+Distance to  Pad 2 223.78784596130328
+Distance to  Pad 3 90.160967164289
+1.png Casualty ({'yellow'}, {'Star'}) at {(461, 421)}
+Distance to  Pad 1 224.19857269840057
+Distance to  Pad 2 197.9898987322333
+Distance to  Pad 3 235.32105728132365
+1.png Casualty ({'yellow'}, {'Triangle'}) at {(263, 274)}
+Distance to  Pad 1 119.47384651043926
+Distance to  Pad 2 215.41819793137256
+Distance to  Pad 3 18.681541692269406
+1.png Casualty ({'yellow'}, {'Triangle'}) at {(192, 44)}
+Distance to  Pad 1 246.78938388836744
+Distance to  Pad 2 196.31097778779463
+Distance to  Pad 3 121.33424908079334
+1.png Casualty ({'green'}, {'Star'}) at {(338, 132)}
+Distance to  Pad 1 90.13878188659973
+Distance to  Pad 2 235.47823678633233
+Distance to  Pad 3 45.09988913511872
+
+Rescue Pad (BLUE):
+   1. Age: Elder, Medical: Mild, Emergency_score: 2, Distance: 197.9898987322333 px
+   2. Age: Adult, Medical: Severe, Emergency_score: 3, Distance: 223.78784596130328 px
+
+Rescue Pad (PINK):
+   1. Age: Child, Medical: Mild, Emergency_score: 2, Distance: 18.681541692269406 px
+   2. Age: Child, Medical: Mild, Emergency_score: 2, Distance: 121.33424908079334 px
+   3. Age: Elder, Medical: Safe, Emergency_score: 1, Distance: 45.09988913511872 px
+
+Rescue Pad (GREY):
+   1. Age: Elder, Medical: Severe, Emergency_score: 3, Distance: 107.27534665523109 px
+Pad-wise Total Priorities: {'grey': 3, 'blue': 5, 'pink': 5}
+Total Casualties Assigned: 6
+Rescue Ratio: 2.1666666666666665
+2.png Casualty ({'red'}, {'Star'}) at {(74, 474)}
+Distance to  Pad 1 157.91770008456936
+Distance to  Pad 2 158.62534475927862
+Distance to  Pad 3 165.83425460380616
+2.png Casualty ({'red'}, {'square'}) at {(266, 417)}
+Distance to  Pad 1 154.76756766196203
+Distance to  Pad 2 101.96568050084302
+Distance to  Pad 3 131.33925536563697
+2.png Casualty ({'red'}, {'Triangle'}) at {(432, 158)}
+Distance to  Pad 1 118.90332207301863
+Distance to  Pad 2 225.81851119870575
+Distance to  Pad 3 245.38337351988622
+2.png Casualty ({'yellow'}, {'Triangle'}) at {(89, 341)}
+Distance to  Pad 1 224.0089283934906
+Distance to  Pad 2 84.78207357690657
+Distance to  Pad 3 68.5054742338158
+2.png Casualty ({'yellow'}, {'Star'}) at {(194, 290)}
+Distance to  Pad 1 186.78865061882107
+Distance to  Pad 2 182.0164827701052
+Distance to  Pad 3 239.25927359247748
+2.png Casualty ({'yellow'}, {'square'}) at {(355, 256)}
+Distance to  Pad 1 214.75800334329801
+Distance to  Pad 2 115.0173899895142
+Distance to  Pad 3 196.69265365030796
+2.png Casualty ({'green'}, {'square'}) at {(462, 452)}
+Distance to  Pad 1 197.651207939643
+Distance to  Pad 2 132.61221663180206
+Distance to  Pad 3 140.91486791676738
+2.png Casualty ({'green'}, {'Star'}) at {(37, 226)}
+Distance to  Pad 1 172.78020719978315
+Distance to  Pad 2 240.6013300046365
+Distance to  Pad 3 158.11388300841898
+
+Rescue Pad (BLUE):
+   1. Age: Child, Medical: Mild, Emergency_score: 2, Distance: 68.5054742338158 px
+   2. Age: Elder, Medical: Safe, Emergency_score: 1, Distance: 158.11388300841898 px
+   3. Age: Adult, Medical: Mild, Emergency_score: 2, Distance: 196.69265365030796 px
+   4. Age: Adult, Medical: Safe, Emergency_score: 1, Distance: 140.91486791676738 px
+
+Rescue Pad (PINK):
+   1. Age: Elder, Medical: Severe, Emergency_score: 3, Distance: 157.91770008456936 px
+   2. Age: Child, Medical: Severe, Emergency_score: 3, Distance: 118.90332207301863 px
+
+Rescue Pad (GREY):
+   1. Age: Elder, Medical: Mild, Emergency_score: 2, Distance: 182.0164827701052 px
+   2. Age: Adult, Medical: Severe, Emergency_score: 3, Distance: 101.96568050084302 px
+Pad-wise Total Priorities: {'grey': 5, 'blue': 6, 'pink': 6}
+Total Casualties Assigned: 8
+Rescue Ratio: 2.125
+3.png Casualty ({'red'}, {'Star'}) at {(331, 452)}
+Distance to  Pad 1 120.33702672078948
+Distance to  Pad 2 93.87757985802574
+Distance to  Pad 3 193.1035991378721
+3.png Casualty ({'red'}, {'square'}) at {(272, 397)}
+Distance to  Pad 1 190.0973434848578
+Distance to  Pad 2 146.7957765060017
+Distance to  Pad 3 244.6160256401857
+3.png Casualty ({'yellow'}, {'Triangle'}) at {(461, 354)}
+Distance to  Pad 1 107.46627377926528
+Distance to  Pad 2 184.50203250912983
+Distance to  Pad 3 213.30963410029094
+3.png Casualty ({'yellow'}, {'Triangle'}) at {(215, 256)}
+Distance to  Pad 1 179.4017837146554
+Distance to  Pad 2 149.20120642943877
+Distance to  Pad 3 180.5796223276591
+3.png Casualty ({'yellow'}, {'square'}) at {(420, 78)}
+Distance to  Pad 1 128.7555824032496
+Distance to  Pad 2 191.0863679072895
+Distance to  Pad 3 255.62863689344354
+3.png Casualty ({'yellow'}, {'Star'}) at {(186, 65)}
+Distance to  Pad 1 174.4505660638566
+Distance to  Pad 2 115.43396380615195
+Distance to  Pad 3 124.21352583354198
+3.png Casualty ({'green'}, {'square'}) at {(122, 386)}
+Distance to  Pad 1 219.84085152673512
+Distance to  Pad 2 235.35929979501554
+Distance to  Pad 3 108.93117092916977
+3.png Casualty ({'green'}, {'square'}) at {(362, 380)}
+Distance to  Pad 1 120.34118164618461
+Distance to  Pad 2 225.64130827488125
+Distance to  Pad 3 202.44999382563586
+3.png Casualty ({'green'}, {'Star'}) at {(229, 166)}
+Distance to  Pad 1 72.3671196055225
+Distance to  Pad 2 120.93386622447825
+Distance to  Pad 3 235.84104816592043
+
+Rescue Pad (BLUE):
+   1. Age: Adult, Medical: Severe, Emergency_score: 3, Distance: 244.6160256401857 px
+   2. Age: Adult, Medical: Mild, Emergency_score: 2, Distance: 255.62863689344354 px
+   3. Age: Adult, Medical: Safe, Emergency_score: 1, Distance: 108.93117092916977 px
+   4. Age: Adult, Medical: Safe, Emergency_score: 1, Distance: 202.44999382563586 px
+
+Rescue Pad (PINK):
+   1. Age: Elder, Medical: Severe, Emergency_score: 3, Distance: 93.87757985802574 px
+   2. Age: Elder, Medical: Mild, Emergency_score: 2, Distance: 115.43396380615195 px
+   3. Age: Child, Medical: Mild, Emergency_score: 2, Distance: 149.20120642943877 px
+
+Rescue Pad (GREY):
+   1. Age: Child, Medical: Mild, Emergency_score: 2, Distance: 107.46627377926528 px
+   2. Age: Elder, Medical: Safe, Emergency_score: 1, Distance: 72.3671196055225 px
+Pad-wise Total Priorities: {'grey': 3, 'blue': 7, 'pink': 7}
+Total Casualties Assigned: 9
+Rescue Ratio: 1.8888888888888888
+4.png Casualty ({'red'}, {'square'}) at {(112, 321)}
+Distance to  Pad 1 173.9798838946618
+Distance to  Pad 2 42.638011210655684
+Distance to  Pad 3 145.03103116229988
+4.png Casualty ({'red'}, {'Star'}) at {(434, 308)}
+Distance to  Pad 1 149.85993460561767
+Distance to  Pad 2 108.52188719332152
+Distance to  Pad 3 255.05489605181077
+4.png Casualty ({'red'}, {'Star'}) at {(81, 234)}
+Distance to  Pad 1 83.21658488546619
+Distance to  Pad 2 219.24415613648634
+Distance to  Pad 3 233.68354670365648
+4.png Casualty ({'red'}, {'Triangle'}) at {(367, 87)}
+Distance to  Pad 1 154.3502510525979
+Distance to  Pad 2 222.9192678975956
+Distance to  Pad 3 116.60617479361889
+4.png Casualty ({'yellow'}, {'Triangle'}) at {(305, 228)}
+Distance to  Pad 1 242.54690268069803
+Distance to  Pad 2 243.83601046605074
+Distance to  Pad 3 171.8254928699464
+4.png Casualty ({'yellow'}, {'square'}) at {(202, 188)}
+Distance to  Pad 1 132.2800060477773
+Distance to  Pad 2 231.96767016116706
+Distance to  Pad 3 142.81806608409175
+4.png Casualty ({'yellow'}, {'Triangle'}) at {(482, 29)}
+Distance to  Pad 1 222.39829136034297
+Distance to  Pad 2 126.11899143269423
+Distance to  Pad 3 49.17316341257699
+4.png Casualty ({'green'}, {'square'}) at {(473, 234)}
+Distance to  Pad 1 184.98918887329606
+Distance to  Pad 2 178.1796845883391
+Distance to  Pad 3 235.04893107606338
+4.png Casualty ({'green'}, {'square'}) at {(128, 91)}
+Distance to  Pad 1 80.05623023850174
+Distance to  Pad 2 141.42842712835352
+Distance to  Pad 3 99.56907150315303
+
+Rescue Pad (BLUE):
+   1. Age: Child, Medical: Severe, Emergency_score: 3, Distance: 116.60617479361889 px
+   2. Age: Child, Medical: Mild, Emergency_score: 2, Distance: 49.17316341257699 px
+   3. Age: Child, Medical: Mild, Emergency_score: 2, Distance: 171.8254928699464 px
+   4. Age: Adult, Medical: Safe, Emergency_score: 1, Distance: 99.56907150315303 px
+
+Rescue Pad (PINK):
+   1. Age: Elder, Medical: Severe, Emergency_score: 3, Distance: 108.52188719332152 px
+   2. Age: Adult, Medical: Severe, Emergency_score: 3, Distance: 42.638011210655684 px
+   3. Age: Adult, Medical: Safe, Emergency_score: 1, Distance: 178.1796845883391 px
+
+Rescue Pad (GREY):
+   1. Age: Elder, Medical: Severe, Emergency_score: 3, Distance: 83.21658488546619 px
+   2. Age: Adult, Medical: Mild, Emergency_score: 2, Distance: 132.2800060477773 px
+Pad-wise Total Priorities: {'grey': 5, 'blue': 8, 'pink': 7}
+Total Casualties Assigned: 9
+Rescue Ratio: 2.2222222222222223
+5.png Casualty ({'red'}, {'square'}) at {(183, 330)}
+Distance to  Pad 1 214.3361845326169
+Distance to  Pad 2 104.80458005259122
+Distance to  Pad 3 155.0290295396317
+5.png Casualty ({'red'}, {'Star'}) at {(343, 299)}
+Distance to  Pad 1 251.14338533992887
+Distance to  Pad 2 90.80198235721508
+Distance to  Pad 3 163.1349134918703
+5.png Casualty ({'red'}, {'Triangle'}) at {(444, 247)}
+Distance to  Pad 1 161.72198366332265
+Distance to  Pad 2 183.46116755324545
+Distance to  Pad 3 87.13208364316786
+5.png Casualty ({'yellow'}, {'Triangle'}) at {(292, 361)}
+Distance to  Pad 1 95.55103348473003
+Distance to  Pad 2 105.65036677645753
+Distance to  Pad 3 242.98971171636055
+5.png Casualty ({'green'}, {'Star'}) at {(211, 204)}
+Distance to  Pad 1 96.66436778875658
+Distance to  Pad 2 75.07329751649384
+Distance to  Pad 3 223.1815404552984
+
+Rescue Pad (BLUE):
+   1. Age: Child, Medical: Severe, Emergency_score: 3, Distance: 87.13208364316786 px
+   2. Age: Adult, Medical: Severe, Emergency_score: 3, Distance: 155.0290295396317 px
+
+Rescue Pad (PINK):
+   1. Age: Child, Medical: Mild, Emergency_score: 2, Distance: 95.55103348473003 px
+
+Rescue Pad (GREY):
+   1. Age: Elder, Medical: Severe, Emergency_score: 3, Distance: 90.80198235721508 px
+   2. Age: Elder, Medical: Safe, Emergency_score: 1, Distance: 75.07329751649384 px
+Pad-wise Total Priorities: {'grey': 4, 'blue': 6, 'pink': 2}
+Total Casualties Assigned: 5
+Rescue Ratio: 2.4
+6.png Casualty ({'red'}, {'square'}) at {(50, 412)}
+Distance to  Pad 1 231.4584195919431
+Distance to  Pad 2 219.34903692517094
+Distance to  Pad 3 216.55946065688286
+6.png Casualty ({'red'}, {'Star'}) at {(162, 321)}
+Distance to  Pad 1 114.72575996697516
+Distance to  Pad 2 230.17601960239037
+Distance to  Pad 3 109.31148155614761
+6.png Casualty ({'red'}, {'Triangle'}) at {(444, 247)}
+Distance to  Pad 1 199.6246477767713
+Distance to  Pad 2 208.5209821576716
+Distance to  Pad 3 84.90583018850944
+6.png Casualty ({'red'}, {'square'}) at {(77, 179)}
+Distance to  Pad 1 46.05431575867782
+Distance to  Pad 2 116.27553482998907
+Distance to  Pad 3 195.35608513685978
+6.png Casualty ({'yellow'}, {'Star'}) at {(386, 399)}
+Distance to  Pad 1 123.1665539016173
+Distance to  Pad 2 134.46560898608982
+Distance to  Pad 3 224.37691503361035
+6.png Casualty ({'green'}, {'Triangle'}) at {(346, 274)}
+Distance to  Pad 1 105.38026380684383
+Distance to  Pad 2 72.12489168102785
+Distance to  Pad 3 112.29425630903836
+6.png Casualty ({'green'}, {'Star'}) at {(211, 204)}
+Distance to  Pad 1 158.61904047118682
+Distance to  Pad 2 127.01574705523721
+Distance to  Pad 3 190.22355269524328
+
+Rescue Pad (BLUE):
+   1. Age: Elder, Medical: Safe, Emergency_score: 1, Distance: 127.01574705523721 px
+   2. Age: Child, Medical: Safe, Emergency_score: 1, Distance: 72.12489168102785 px
+
+Rescue Pad (PINK):
+   1. Age: Elder, Medical: Severe, Emergency_score: 3, Distance: 109.31148155614761 px
+   2. Age: Child, Medical: Severe, Emergency_score: 3, Distance: 84.90583018850944 px
+   3. Age: Adult, Medical: Severe, Emergency_score: 3, Distance: 216.55946065688286 px
+
+Rescue Pad (GREY):
+   1. Age: Elder, Medical: Mild, Emergency_score: 2, Distance: 123.1665539016173 px
+   2. Age: Adult, Medical: Severe, Emergency_score: 3, Distance: 46.05431575867782 px
+Pad-wise Total Priorities: {'grey': 5, 'blue': 2, 'pink': 9}
+Total Casualties Assigned: 7
+Rescue Ratio: 2.2857142857142856
+7.png Casualty ({'red'}, {'Star'}) at {(289, 322)}
+Distance to  Pad 1 216.34232133357543
+Distance to  Pad 2 79.61155694998057
+Distance to  Pad 3 116.59331027121581
+7.png Casualty ({'red'}, {'Triangle'}) at {(281, 213)}
+Distance to  Pad 1 110.16805344563369
+Distance to  Pad 2 183.24027941476186
+Distance to  Pad 3 221.83101676726815
+7.png Casualty ({'red'}, {'square'}) at {(83, 161)}
+Distance to  Pad 1 161.60754932861275
+Distance to  Pad 2 220.11133546457802
+Distance to  Pad 3 139.40229553346674
+7.png Casualty ({'red'}, {'Star'}) at {(368, 131)}
+Distance to  Pad 1 132.3706916201619
+Distance to  Pad 2 48.2078831727758
+Distance to  Pad 3 115.82745788456207
+7.png Casualty ({'yellow'}, {'Triangle'}) at {(177, 241)}
+Distance to  Pad 1 142.2708684165525
+Distance to  Pad 2 214.3105223734943
+Distance to  Pad 3 250.16994223927063
+7.png Casualty ({'yellow'}, {'square'}) at {(451, 209)}
+Distance to  Pad 1 234.95744295510198
+Distance to  Pad 2 215.77998053572995
+Distance to  Pad 3 177.65415840897168
+7.png Casualty ({'green'}, {'Triangle'}) at {(375, 256)}
+Distance to  Pad 1 199.44924166313595
+Distance to  Pad 2 139.77839604173457
+Distance to  Pad 3 140.52046114356443
+7.png Casualty ({'green'}, {'Star'}) at {(289, 37)}
+Distance to  Pad 1 91.2633551870629
+Distance to  Pad 2 245.3915238959977
+Distance to  Pad 3 190.0973434848578
+
+Rescue Pad (BLUE):
+   1. Age: Elder, Medical: Safe, Emergency_score: 1, Distance: 190.0973434848578 px
+   2. Age: Adult, Medical: Severe, Emergency_score: 3, Distance: 139.40229553346674 px
+   3. Age: Adult, Medical: Mild, Emergency_score: 2, Distance: 177.65415840897168 px
+
+Rescue Pad (PINK):
+   1. Age: Elder, Medical: Severe, Emergency_score: 3, Distance: 48.2078831727758 px
+   2. Age: Elder, Medical: Severe, Emergency_score: 3, Distance: 79.61155694998057 px
+   3. Age: Child, Medical: Safe, Emergency_score: 1, Distance: 139.77839604173457 px
+
+Rescue Pad (GREY):
+   1. Age: Child, Medical: Severe, Emergency_score: 3, Distance: 110.16805344563369 px
+   2. Age: Child, Medical: Mild, Emergency_score: 2, Distance: 142.2708684165525 px
+Pad-wise Total Priorities: {'grey': 5, 'blue': 6, 'pink': 7}
+Total Casualties Assigned: 8
+Rescue Ratio: 2.25
+8.png Casualty ({'red'}, {'Star'}) at {(289, 322)}
+Distance to  Pad 1 231.1384866265244
+Distance to  Pad 2 116.59331027121581
+Distance to  Pad 3 235.1871595134394
+8.png Casualty ({'red'}, {'Star'}) at {(317, 192)}
+Distance to  Pad 1 182.18946182477185
+Distance to  Pad 2 113.21660655575224
+Distance to  Pad 3 119.20151005754919
+8.png Casualty ({'red'}, {'square'}) at {(83, 161)}
+Distance to  Pad 1 214.53204888780604
+Distance to  Pad 2 139.40229553346674
+Distance to  Pad 3 188.30825791770258
+8.png Casualty ({'red'}, {'Triangle'}) at {(181, 97)}
+Distance to  Pad 1 152.43359209832983
+Distance to  Pad 2 115.2432210587677
+Distance to  Pad 3 76.4198926981712
+8.png Casualty ({'yellow'}, {'square'}) at {(427, 358)}
+Distance to  Pad 1 116.81181447096864
+Distance to  Pad 2 168.90825912311098
+Distance to  Pad 3 189.01058171435798
+8.png Casualty ({'yellow'}, {'Triangle'}) at {(50, 256)}
+Distance to  Pad 1 153.2122710490253
+Distance to  Pad 2 193.3726971420733
+Distance to  Pad 3 72.12489168102785
+8.png Casualty ({'yellow'}, {'square'}) at {(451, 209)}
+Distance to  Pad 1 36.76955262170047
+Distance to  Pad 2 177.65415840897168
+Distance to  Pad 3 228.114006584427
+8.png Casualty ({'green'}, {'Triangle'}) at {(237, 213)}
+Distance to  Pad 1 229.7912095794789
+Distance to  Pad 2 172.51376756653366
+Distance to  Pad 3 125.60254774486066
+8.png Casualty ({'green'}, {'Star'}) at {(401, 51)}
+Distance to  Pad 1 215.88886029621816
+Distance to  Pad 2 167.41863695538797
+Distance to  Pad 3 148.92951352905172
+
+Rescue Pad (BLUE):
+   1. Age: Elder, Medical: Severe, Emergency_score: 3, Distance: 113.21660655575224 px
+   2. Age: Elder, Medical: Severe, Emergency_score: 3, Distance: 116.59331027121581 px
+   3. Age: Adult, Medical: Severe, Emergency_score: 3, Distance: 139.40229553346674 px
+   4. Age: Elder, Medical: Safe, Emergency_score: 1, Distance: 167.41863695538797 px
+
+Rescue Pad (PINK):
+   1. Age: Adult, Medical: Mild, Emergency_score: 2, Distance: 36.76955262170047 px
+   2. Age: Adult, Medical: Mild, Emergency_score: 2, Distance: 116.81181447096864 px
+   3. Age: Child, Medical: Safe, Emergency_score: 1, Distance: 229.7912095794789 px
+
+Rescue Pad (GREY):
+   1. Age: Child, Medical: Severe, Emergency_score: 3, Distance: 76.4198926981712 px
+   2. Age: Child, Medical: Mild, Emergency_score: 2, Distance: 72.12489168102785 px
+Pad-wise Total Priorities: {'grey': 5, 'blue': 10, 'pink': 5}
+Total Casualties Assigned: 9
+Rescue Ratio: 2.2222222222222223
+9.png Casualty ({'red'}, {'square'}) at {(334, 328)}
+Distance to  Pad 1 134.21251804507656
+Distance to  Pad 2 158.14234094637652
+Distance to  Pad 3 207.1183236703117
+9.png Casualty ({'red'}, {'Star'}) at {(321, 114)}
+Distance to  Pad 1 244.40130932546168
+Distance to  Pad 2 130.13838787997952
+Distance to  Pad 3 114.28473213863697
+9.png Casualty ({'yellow'}, {'square'}) at {(353, 402)}
+Distance to  Pad 1 146.4923206178399
+Distance to  Pad 2 229.17242417009948
+Distance to  Pad 3 81.2219182240853
+9.png Casualty ({'yellow'}, {'Star'}) at {(126, 161)}
+Distance to  Pad 1 86.08135686662938
+Distance to  Pad 2 115.03912377969506
+Distance to  Pad 3 166.56830430787244
+9.png Casualty ({'green'}, {'square'}) at {(194, 328)}
+Distance to  Pad 1 96.52460826131335
+Distance to  Pad 2 125.57467897629681
+Distance to  Pad 3 155.31258802814406
+9.png Casualty ({'green'}, {'square'}) at {(62, 273)}
+Distance to  Pad 1 185.26197667087544
+Distance to  Pad 2 181.06904760339356
+Distance to  Pad 3 146.53668482670133
+9.png Casualty ({'green'}, {'Star'}) at {(335, 204)}
+Distance to  Pad 1 169.29264603047588
+Distance to  Pad 2 104.0768946500615
+Distance to  Pad 3 112.6809655620682
+
+Rescue Pad (BLUE):
+   1. Age: Elder, Medical: Mild, Emergency_score: 2, Distance: 86.08135686662938 px
+   2. Age: Adult, Medical: Severe, Emergency_score: 3, Distance: 134.21251804507656 px
+   3. Age: Adult, Medical: Safe, Emergency_score: 1, Distance: 96.52460826131335 px
+
+Rescue Pad (PINK):
+   1. Age: Elder, Medical: Severe, Emergency_score: 3, Distance: 114.28473213863697 px
+   2. Age: Adult, Medical: Mild, Emergency_score: 2, Distance: 81.2219182240853 px
+   3. Age: Adult, Medical: Safe, Emergency_score: 1, Distance: 146.53668482670133 px
+
+Rescue Pad (GREY):
+   1. Age: Elder, Medical: Safe, Emergency_score: 1, Distance: 104.0768946500615 px
+Pad-wise Total Priorities: {'grey': 1, 'blue': 6, 'pink': 6}
+Total Casualties Assigned: 7
+Rescue Ratio: 1.8571428571428572
+10.png Casualty ({'red'}, {'Star'}) at {(289, 322)}
+Distance to  Pad 1 120.3536455617361
+Distance to  Pad 2 208.4034548657963
+Distance to  Pad 3 220.98416232843476
+10.png Casualty ({'red'}, {'square'}) at {(202, 215)}
+Distance to  Pad 1 129.0310040261642
+Distance to  Pad 2 184.20097719610501
+Distance to  Pad 3 249.9679979517378
+10.png Casualty ({'red'}, {'square'}) at {(293, 73)}
+Distance to  Pad 1 144.5060552364502
+Distance to  Pad 2 176.40011337864837
+Distance to  Pad 3 227.29936207565564
+10.png Casualty ({'yellow'}, {'Star'}) at {(490, 385)}
+Distance to  Pad 1 197.20294115453754
+Distance to  Pad 2 226.4376293816909
+Distance to  Pad 3 91.3892772703669
+10.png Casualty ({'yellow'}, {'Star'}) at {(331, 185)}
+Distance to  Pad 1 223.48601745970598
+Distance to  Pad 2 195.90048494069634
+Distance to  Pad 3 173.92239648762893
+10.png Casualty ({'green'}, {'Triangle'}) at {(395, 341)}
+Distance to  Pad 1 225.00222221124838
+Distance to  Pad 2 166.90416411821485
+Distance to  Pad 3 140.9432509913121
+10.png Casualty ({'green'}, {'Triangle'}) at {(89, 272)}
+Distance to  Pad 1 105.75916035975324
+Distance to  Pad 2 252.57870060636546
+Distance to  Pad 3 202.3907112493061
+10.png Casualty ({'green'}, {'Triangle'}) at {(453, 147)}
+Distance to  Pad 1 227.6005272401626
+Distance to  Pad 2 103.9471019317037
+Distance to  Pad 3 195.3176899310454
+10.png Casualty ({'green'}, {'Triangle'}) at {(89, 104)}
+Distance to  Pad 1 249.51352668743232
+Distance to  Pad 2 124.14507642270796
+Distance to  Pad 3 65.62011886609167
+
+Rescue Pad (BLUE):
+   1. Age: Elder, Medical: Mild, Emergency_score: 2, Distance: 91.3892772703669 px
+   2. Age: Elder, Medical: Mild, Emergency_score: 2, Distance: 173.92239648762893 px
+   3. Age: Child, Medical: Safe, Emergency_score: 1, Distance: 65.62011886609167 px
+   4. Age: Child, Medical: Safe, Emergency_score: 1, Distance: 202.3907112493061 px
+
+Rescue Pad (PINK):
+   1. Age: Elder, Medical: Severe, Emergency_score: 3, Distance: 120.3536455617361 px
+   2. Age: Adult, Medical: Severe, Emergency_score: 3, Distance: 129.0310040261642 px
+   3. Age: Adult, Medical: Severe, Emergency_score: 3, Distance: 144.5060552364502 px
+
+Rescue Pad (GREY):
+   1. Age: Child, Medical: Safe, Emergency_score: 1, Distance: 103.9471019317037 px
+   2. Age: Child, Medical: Safe, Emergency_score: 1, Distance: 166.90416411821485 px
+Pad-wise Total Priorities: {'grey': 2, 'blue': 6, 'pink': 9}
+Total Casualties Assigned: 9
+Rescue Ratio: 1.8888888888888888
+[('5.png', 2.4), ('6.png', 2.2857142857142856), ('7.png', 2.25), ('4.png', 2.2222222222222223), ('8.png', 2.2222222222222223), ('1.png', 2.1666666666666665), ('2.png', 2.125), ('3.png', 1.8888888888888888), ('10.png', 1.8888888888888888), ('9.png', 1.8571428571428572)]
